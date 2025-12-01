@@ -16,6 +16,8 @@ print("Hi there")
 
 
 ## 2. Division Rules
+Python 2 truncates integer division by default.\
+Python 3 always performs floating-point division unless // is used.
 ```python
 # Python 2
 7 / 3   # Output: 2 (integer division)
@@ -25,11 +27,11 @@ print("Hi there")
 7 // 3  # Output: 2
 ```
 
-Python 2 truncates integer division by default.\
-Python 3 always performs floating-point division unless // is used.
 
 
 ## 3. String & Unicode
+
+Python 3 treats every string as Unicode, avoiding the ASCII/Unicode confusion seen in Python 2.
 
 ```python
 # Python 2
@@ -40,10 +42,11 @@ u"hello"  # unicode
 "hello"   # unicode (default)
 ```
 
-Python 3 treats every string as Unicode, avoiding the ASCII/Unicode confusion seen in Python 2.
 
 
 ## 4. Iteration & Ranges
+xrange was removed in Python 3 because range() became memory-efficient and iterable.
+
 ```python
 # Python 2
 range(4)    # produces a list
@@ -53,10 +56,11 @@ xrange(4)   # produces a generator-like object
 range(4)    # lazy sequence (like old xrange)
 ```
 
-xrange was removed in Python 3 because range() became memory-efficient and iterable.
 
 
 ## 5. Input Handling
+Python 3 removed the unsafe input() behavior from Python 2.
+
 ```python
 # Python 2
 raw_input()   # returns string
@@ -66,10 +70,11 @@ input()       # evaluates input as Python code
 input()       # always returns string
 ```
 
-Python 3 removed the unsafe input() behavior from Python 2.
 
 
 ## 6. Exception Format
+Python 3 enforces a clearer and more readable exception syntax.
+
 ```python
 # Python 2
 except IOError, err:
@@ -78,7 +83,6 @@ except IOError, err:
 except IOError as err:
 ```
 
-Python 3 enforces a clearer and more readable exception syntax.
 
 
 ## 7. Dictionary View Objects
@@ -110,6 +114,10 @@ The new structure is more consistent and lowercase-based.
 type hints, f-strings, asyncio, and improved standard libraries.
 
 ## 10. Integer Handling
+
+Python 2 separates int and long.\
+Python 3 merges them into a single int type with unlimited precision.
+
 ```python
 # Python 2
 type(10)      # int
@@ -120,14 +128,13 @@ type(10)      # int
 type(9999999999999999999)  # int (no long type)
 ```
 
-Python 2 separates int and long.
-
-Python 3 merges them into a single int type with unlimited precision.
 
 ## 11. Itertools & Generators
 
 Python 3 emphasizes lazy evaluation.\
-Functions like map(), filter(), zip() return iterators instead of lists.
+Functions like map(), filter(), zip() return iterators instead of lists.\
+This makes Python 3 more memory-efficient.
+
 ```python
 # Python 2
 result = map(lambda x: x*x, [1,2,3])   # returns list
@@ -136,11 +143,11 @@ result = map(lambda x: x*x, [1,2,3])   # returns list
 result = map(lambda x: x*x, [1,2,3])   # returns iterator
 ```
 
-This makes Python 3 more memory-efficient.
 
 ## 12. Error Messages & Syntax Improvements
 
-Python 3 has clearer and more descriptive error messages.
+Python 3 has clearer and more descriptive error messages.\
+This makes debugging easier for beginners and developers.
 
 Example:
 ```python
@@ -151,4 +158,3 @@ SyntaxError: invalid syntax
 SyntaxError: Missing parentheses in call to 'print'
 ```
 
-This makes debugging easier for beginners and developers.
